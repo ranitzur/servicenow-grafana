@@ -1,0 +1,224 @@
+{
+  "type": "datasource",
+  "name": "servicenow-optimiz-plugin",
+  "id": "servicenow-optimiz-plugin",
+  "metrics": true,
+  "info": {
+    "description": "Opensource ServiceNow plugin developed by Optimiz",
+    "author": {
+      "name": "osamaawwad",
+      "url": ""
+    },
+    "keywords": ["servicenow", "service-now", "ServiceNow", "Service-Now", "optimiz", "Optimiz"],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Github",
+        "url": "https://github.com/optimizca/servicenow-grafana"
+      },
+      {
+        "name": "License",
+        "url": "https://github.com/optimizca/servicenow-grafana/blob/main/LICENSE"
+      }
+    ],
+    "screenshots": [],
+    "version": "1.2.1",
+    "updated": "2021-12-02"
+  },
+  "includes": [
+    {
+      "type": "dashboard",
+      "name": "ACC Agents Inventory",
+      "path": "dashboards/ACC Agents Inventory.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "ACC-L CI Details",
+      "path": "dashboards/ACC-L CI Details.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Advanced - ACC Agents Inventory",
+      "path": "dashboards/Advanced - ACC Agents Inventory.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Advanced - Application Services",
+      "path": "dashboards/Advanced - Application Services.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Advanced - vCenter Inventory",
+      "path": "dashboards/Advanced - vCenter Inventory.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Anomaly Insights",
+      "path": "dashboards/Anomaly Insights.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Application Service Details",
+      "path": "dashboards/Application Service Details.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Application Services",
+      "path": "dashboards/Application Services.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "AWS CI Details",
+      "path": "dashboards/AWS CI Details.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "AWS Function Details",
+      "path": "dashboards/AWS Function Details.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "AWS Inventory - US Regions",
+      "path": "dashboards/AWS Inventory - US Regions.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "AWS Lamda Functions",
+      "path": "dashboards/AWS Lamda Functions.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Azure CI Details",
+      "path": "dashboards/Azure CI Details.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Azure Inventory",
+      "path": "dashboards/Azure Inventory.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "CI Details",
+      "path": "dashboards/CI Details.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Compare CIs",
+      "path": "dashboards/Compare CIs.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Generic CI Details",
+      "path": "dashboards/Generic CI Details.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Kubernetes Details 2",
+      "path": "dashboards/Kubernetes Details 2.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Kubernetes Details",
+      "path": "dashboards/Kubernetes Details.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Kubernetes",
+      "path": "dashboards/Kubernetes.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Landing Page",
+      "path": "dashboards/Landing Page.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Linux Inventory ACC-L",
+      "path": "dashboards/Linux Inventory ACC-L.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Live CI Data",
+      "path": "dashboards/Live CI Data.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Live Logs",
+      "path": "dashboards/Live Logs.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Log Analytics",
+      "path": "dashboards/Log Analytics.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Observability Dashboard",
+      "path": "dashboards/Observability Dashboard.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Observability Live Logs",
+      "path": "dashboards/Observability Live Logs.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Observability with Log KPIs",
+      "path": "dashboards/Observability with Log KPIs.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Outage Dashboard",
+      "path": "dashboards/Outage Dashboard.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Related Alerts",
+      "path": "dashboards/Related Alerts.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Simple Event Management (Node-Based)",
+      "path": "dashboards/Simple Event Management (Node-Based).json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Simple Event Management",
+      "path": "dashboards/Simple Event Management.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "Tag Health",
+      "path": "dashboards/Tag Health.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "UI Actions",
+      "path": "dashboards/UI Actions.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "vCenter CI Details",
+      "path": "dashboards/vCenter CI Details.json"
+    },
+    {
+      "type": "dashboard",
+      "name": "vCenter Inventory",
+      "path": "dashboards/vCenter Inventory.json"
+    },
+    {
+      "type": "panel",
+      "name": "Novatec SDG Panel",
+      "path": "panels/novatec-sdg-panel"
+    }
+  ],
+  "dependencies": {
+    "grafanaDependency": ">=8.1.1",
+    "plugins": []
+  },
+  "annotations": true,
+  "logs": true
+}

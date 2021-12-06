@@ -1,32 +1,75 @@
-import { DataQuery, DataSourceJsonData } from "@grafana/data";
-import { SelectableValue } from "@grafana/data";
+import { DataQuery, DataSourceJsonData, SelectableValue, VariableModel } from '@grafana/data';
 
 export interface PluginQuery extends DataQuery {
-  queryFilter: string;
+  sysparam_query: string;
+  metricAnomaly: string;
+  topology_parent_depth: string;
+  topology_child_depth: string;
+  topology_namespaces: string;
+  topology_filter: string;
+  live_osquery: string;
+  tableName: SelectableValue<string>;
+  groupBy: string;
+  aggregateColumn: string;
+  rowLimit: string;
+  elasticSearch: string;
+  trendPeriod: string;
+  showPercent: boolean;
+  page: number;
+  getAlertCount: SelectableValue<string>;
+  compressLogs: boolean;
+  grafanaTimerange: boolean;
 
-  service: string;
-  source: string;
-  metricType: string;
-  metricName: string;
+  cacheOverride: string;
 
-  selectedServiceList: SelectableValue<string>;
-  selectedSourceList: SelectableValue<string>;
-  selectedMetricNameList: SelectableValue<string>;
-  selectedMetricTypeList: SelectableValue<string>;
+  basic_sysparam: Array<{
+    1: SelectableValue<string> | null;
+    2: SelectableValue<string> | null;
+    3: SelectableValue<string> | null;
+    4: SelectableValue<string> | null;
+  }>;
 
   selectedQueryCategory: SelectableValue<string>;
+  selectedServiceList: SelectableValue<string>;
+  selectedSourceList: SelectableValue<string>;
+  selectedMetricTypeList: SelectableValue<string>;
+  selectedMetricNameList: SelectableValue<string>;
+  selectedMetricAnomalyList: SelectableValue<string>;
+  selectedAlertTypeList: SelectableValue<string>;
+  selectedAlertStateList: SelectableValue<string>;
+  selectedChangeTypeList: SelectableValue<string>;
+  selectedTopologyDependsOnFilter: SelectableValue<string>;
+  selectedAdminCategoryList: SelectableValue<string>;
+  selectedAgentFilterType: SelectableValue<string>;
+  selectedAgentFilter: SelectableValue<string>;
+  selectedAggregateType: SelectableValue<string>;
+  selectedtableColumns: SelectableValue<string>;
+  sortBy: SelectableValue<string>;
+  selectedTrendColumn: SelectableValue<string>;
+  selectedTrendBy: SelectableValue<string>;
+
+  tagKeys: SelectableValue<string>;
+  tagValues: SelectableValue<string>;
 }
 
 export const defaultQuery: Partial<PluginQuery> = {
-  service: "$service",
-  source: "$source",
-  metricName: "$metricName",
-  metricType: "$metricType",
   selectedQueryCategory: {
-    label: "Metrics",
-    value: "Metrics",
-    description: "Get Timeseries metrics."
-  }
+    label: 'Metrics',
+    value: 'Metrics',
+    description: 'Get Timeseries metrics.',
+  },
+  basic_sysparam: [
+    {
+      1: null,
+      2: null,
+      3: null,
+      4: null,
+    },
+  ],
+  getAlertCount: { label: 'No', value: 'false' },
+  cacheOverride: '',
+  compressLogs: false,
+  grafanaTimerange: false,
 };
 
 /**
@@ -35,7 +78,6 @@ export const defaultQuery: Partial<PluginQuery> = {
 export interface PluginDataSourceOptions extends DataSourceJsonData {
   path?: string;
   resolution?: number;
-  instanceName?: string;
   authInfo?: string;
   corsProxy?: string;
   username?: string;
@@ -48,9 +90,10 @@ export interface CustomVariableQuery {
 }
 
 export interface ConfigEditOptions extends DataSourceJsonData {
-  organization?: string;
-  defaultBucket?: string;
-  maxSeries?: number;
+  apiPath?: string;
+  imageURL?: string;
+  instanceName?: string;
+  cacheTimeout?: number;
 }
 
 export interface ConfigEditSecureJsonData {
@@ -67,4 +110,18 @@ export interface QueryResponse {
   refId?: string;
   meta?: string;
   rows: any[];
+}
+
+export type Pair<T, K> = [T, K];
+
+export interface TextValuePair {
+  text: string;
+  value: any;
+}
+
+export interface MultiValueVariable extends VariableModel {
+  allValue: string | null;
+  id: string;
+  current: TextValuePair;
+  options: TextValuePair[];
 }
